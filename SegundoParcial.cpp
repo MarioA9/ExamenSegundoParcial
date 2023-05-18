@@ -9,7 +9,7 @@ void sword(vector<string>& inventory, int Gems, int option);
 void shield(vector<string>& inventory, int Gems, int option);
 void armor(vector<string>& inventory, int Gems, int option);
 void axe(vector<string>& inventory, int Gems, int option);
-void gem(vector<string>& inventory, int Gems, int option);
+void gema(vector<string>& inventory, int Gems, int option);
 void travel(vector<string>& inventory, int Gems, int option);
 void cleanmirror();
 
@@ -58,7 +58,7 @@ int main()
 			axe(inventory, Gems, option);
 			break;
 		case 5:
-			gem(inventory, Gems, option);
+			gema(inventory, Gems, option);
 			break;
 		default:
 			return 0;
@@ -67,7 +67,7 @@ int main()
 	}
 }
 
-void potion(vector<string>& inventory, int Gems, int option)
+void potion(vector<string>& inventory, int gems, int option)
 {
 	cleanmirror();
 	cout << "you found a one potion, Would you like to keep it in inventory?\n1.Yes \n2.no" << endl;
@@ -110,12 +110,12 @@ void potion(vector<string>& inventory, int Gems, int option)
 			inventory[9] = "potion";
 			break;
 		default:
-			return potion(inventory, Gems, option);
+			return potion(inventory, gems, option);
 			break;
 		}
 		for (unsigned int i = 0; i < inventory.size(); i++)
 		{
-			cout << inventory[i] << endl << Gems << endl;
+			cout << inventory[i] << endl << gems << endl;
 		}
 
 		break;
@@ -123,7 +123,7 @@ void potion(vector<string>& inventory, int Gems, int option)
 
 		break;
 	default:
-		return potion(inventory, Gems, option);
+		return potion(inventory, gems, option);
 		break;
 	}
 	return;
@@ -397,7 +397,7 @@ void travel(vector<string>& inventory, int Gems, int option)
 		axe(inventory, Gems, option);
 		break;
 	case 5:
-		gem(inventory, Gems, option);
+		gema(inventory, Gems, option);
 		break;
 	default:
 		return travel(inventory, Gems, option);
